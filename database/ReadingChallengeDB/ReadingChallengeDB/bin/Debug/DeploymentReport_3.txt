@@ -1,0 +1,36 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column numGoal in table [dbo].[Challenges] is currently  NCHAR (10) NOT NULL but is being changed to  INT
+         NOT NULL. Data loss could occur.
+       The column [dbo].[OrgUsers].[userID] is being dropped, data loss could occur.
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[OrgUsers] (Foreign Key)
+     Alter
+       [dbo].[Challenges] (Table)
+       [dbo].[OrgUsers] (Table)
+       [dbo].[Users] (Table)
+     Create
+       [dbo].[Authors] (Table)
+       [dbo].[Books] (Table)
+       [dbo].[Genres] (Table)
+       [dbo].[OrgUserChallenges] (Table)
+       [dbo].[UserBooks] (Table)
+       Foreign Key: unnamed constraint on [dbo].[OrgUsers] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[OrgUserChallenges] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[OrgUserChallenges] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserBooks] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserBooks] (Foreign Key)
+
+** Supporting actions
+
+The type for column numGoal in table [dbo].[Challenges] is currently  NCHAR (10) NOT NULL but is being changed to  INT NOT NULL. Data loss could occur.
+The column [dbo].[OrgUsers].[userID] is being dropped, data loss could occur.
+

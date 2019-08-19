@@ -62,7 +62,11 @@
     <Build Include="Challenges.sql" />
     <Build Include="Users.sql" />
     <Build Include="OrgUsers.sql" />
-    <Build Include="orgUserChallenges.sql" />
+    <Build Include="OrgUserChallenges.sql" />
+    <Build Include="Authors.sql" />
+    <Build Include="Genres.sql" />
+    <Build Include="Books.sql" />
+    <Build Include="UserBooks.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="ReadingChallengeDB.refactorlog" />
