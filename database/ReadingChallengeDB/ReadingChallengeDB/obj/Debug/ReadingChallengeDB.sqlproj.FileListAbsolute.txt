@@ -1,0 +1,6 @@
+C:\Users\Parents\Documents\GitHub\ReadingChallenge\database\ReadingChallengeDB\ReadingChallengeDB\bin\Debug\ReadingChallengeDB.dacpac
+C:\Users\Parents\Documents\GitHub\ReadingChallenge\database\ReadingChallengeDB\ReadingChallengeDB\bin\Debug\ReadingChallengeDB.dll
+C:\Users\Parents\Documents\GitHub\ReadingChallenge\database\ReadingChallengeDB\ReadingChallengeDB\bin\Debug\ReadingChallengeDB.pdb
+C:\Users\Parents\Documents\GitHub\ReadingChallenge\database\ReadingChallengeDB\ReadingChallengeDB\obj\Debug\ReadingChallengeDB.sqlprojAssemblyReference.cache
+C:\Users\Parents\Documents\GitHub\ReadingChallenge\database\ReadingChallengeDB\ReadingChallengeDB\obj\Debug\ReadingChallengeDB.dll
+C:\Users\Parents\Documents\GitHub\ReadingChallenge\database\ReadingChallengeDB\ReadingChallengeDB\obj\Debug\ReadingChallengeDB.pdb

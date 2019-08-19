@@ -57,4 +57,14 @@
   <ItemGroup>
     <Folder Include="Properties" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="Organizations.sql" />
+    <Build Include="Challenges.sql" />
+    <Build Include="Users.sql" />
+    <Build Include="OrgUsers.sql" />
+    <Build Include="orgUserChallenges.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="ReadingChallengeDB.refactorlog" />
+  </ItemGroup>
 </Project>
