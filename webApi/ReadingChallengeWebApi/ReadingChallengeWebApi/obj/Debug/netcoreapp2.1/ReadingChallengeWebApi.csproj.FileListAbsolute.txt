@@ -1,0 +1,11 @@
+C:\Users\Parents\source\repos\ReadingChallengeWebApi\ReadingChallengeWebApi\bin\Debug\netcoreapp2.1\ReadingChallengeWebApi.deps.json
+C:\Users\Parents\source\repos\ReadingChallengeWebApi\ReadingChallengeWebApi\bin\Debug\netcoreapp2.1\ReadingChallengeWebApi.runtimeconfig.json
+C:\Users\Parents\source\repos\ReadingChallengeWebApi\ReadingChallengeWebApi\bin\Debug\netcoreapp2.1\ReadingChallengeWebApi.runtimeconfig.dev.json
+C:\Users\Parents\source\repos\ReadingChallengeWebApi\ReadingChallengeWebApi\bin\Debug\netcoreapp2.1\ReadingChallengeWebApi.dll
+C:\Users\Parents\source\repos\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.csprojAssemblyReference.cache
+C:\Users\Parents\source\repos\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.csproj.CoreCompileInputs.cache
+C:\Users\Parents\source\repos\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.RazorAssemblyInfo.cache
+C:\Users\Parents\source\repos\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.RazorAssemblyInfo.cs
+C:\Users\Parents\source\repos\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.AssemblyInfoInputs.cache
+C:\Users\Parents\source\repos\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.AssemblyInfo.cs
+C:\Users\Parents\source\repos\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.RazorTargetAssemblyInfo.cache

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29209.62
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadingChallengeWebApi", "ReadingChallengeWebApi\ReadingChallengeWebApi.csproj", "{3959DE8F-F9A9-48AD-987C-F46778341772}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3959DE8F-F9A9-48AD-987C-F46778341772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3959DE8F-F9A9-48AD-987C-F46778341772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3959DE8F-F9A9-48AD-987C-F46778341772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3959DE8F-F9A9-48AD-987C-F46778341772}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {564FFE9C-E68A-4FFA-870C-57C4FD86B304}
+	EndGlobalSection
+EndGlobal
