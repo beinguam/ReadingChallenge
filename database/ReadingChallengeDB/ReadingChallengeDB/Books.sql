@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[Books]
 (
 	[bookID] INT NOT NULL PRIMARY KEY, 
-    [title] NCHAR(255) NULL, 
-    [author] NCHAR(255) NULL, 
+    [title] NVARCHAR(MAX) NULL, 
+    [author] NVARCHAR(MAX) NULL, 
     [pages] INT NULL
 )

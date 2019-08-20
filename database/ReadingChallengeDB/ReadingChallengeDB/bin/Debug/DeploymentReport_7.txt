@@ -1,0 +1,23 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column lname in table [dbo].[Users] is currently  NCHAR (50) NULL but is being changed to  NUMERIC (18)
+         NULL. Data loss could occur.
+
+** User actions
+     Alter
+       [dbo].[Authors] (Table)
+       [dbo].[Books] (Table)
+       [dbo].[Challenges] (Table)
+       [dbo].[Genres] (Table)
+       [dbo].[Users] (Table)
+
+** Supporting actions
+
+The type for column lname in table [dbo].[Users] is currently  NCHAR (50) NULL but is being changed to  NUMERIC (18) NULL. Data loss could occur.
+

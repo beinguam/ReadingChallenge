@@ -13,7 +13,7 @@ namespace ReadingChallengeWebApi.Models
 
         public int UserId { get; set; }
         public string Fname { get; set; }
-        public string Lname { get; set; }
+        public decimal? Lname { get; set; }
 
         public ICollection<OrgUserChallenges> OrgUserChallenges { get; set; }
         public ICollection<UserBooks> UserBooks { get; set; }

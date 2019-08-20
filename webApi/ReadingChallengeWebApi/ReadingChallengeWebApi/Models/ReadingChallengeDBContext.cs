@@ -17,10 +17,8 @@ namespace ReadingChallengeWebApi.Models
 
         public virtual DbSet<Authors> Authors { get; set; }
         public virtual DbSet<Books> Books { get; set; }
-        public virtual DbSet<Challenge> Challenge { get; set; }
         public virtual DbSet<Challenges> Challenges { get; set; }
         public virtual DbSet<Genres> Genres { get; set; }
-        public virtual DbSet<Organization> Organization { get; set; }
         public virtual DbSet<Organizations> Organizations { get; set; }
         public virtual DbSet<OrgUserChallenges> OrgUserChallenges { get; set; }
         public virtual DbSet<OrgUsers> OrgUsers { get; set; }
@@ -48,7 +46,7 @@ namespace ReadingChallengeWebApi.Models
 
                 entity.Property(e => e.Name)
                     .HasColumnName("name")
-                    .HasMaxLength(10);
+                    .HasMaxLength(50);
             });
 
             modelBuilder.Entity<Books>(entity =>
@@ -59,54 +57,11 @@ namespace ReadingChallengeWebApi.Models
                     .HasColumnName("bookID")
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.Author)
-                    .HasColumnName("author")
-                    .HasMaxLength(255);
+                entity.Property(e => e.Author).HasColumnName("author");
 
                 entity.Property(e => e.Pages).HasColumnName("pages");
 
-                entity.Property(e => e.Title)
-                    .HasColumnName("title")
-                    .HasMaxLength(255);
-            });
-
-            modelBuilder.Entity<Challenge>(entity =>
-            {
-                entity.Property(e => e.ChallengeId)
-                    .HasColumnName("challengeID")
-                    .ValueGeneratedNever();
-
-                entity.Property(e => e.BeginDate)
-                    .IsRequired()
-                    .HasColumnName("beginDate")
-                    .HasMaxLength(10);
-
-                entity.Property(e => e.EndDate)
-                    .IsRequired()
-                    .HasColumnName("endDate")
-                    .HasMaxLength(10);
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(10);
-
-                entity.Property(e => e.NumGoal)
-                    .IsRequired()
-                    .HasColumnName("numGoal")
-                    .HasMaxLength(10);
-
-                entity.Property(e => e.OrgId).HasColumnName("orgID");
-
-                entity.Property(e => e.Type)
-                    .IsRequired()
-                    .HasColumnName("type")
-                    .HasMaxLength(10);
-
-                entity.HasOne(d => d.Org)
-                    .WithMany(p => p.Challenge)
-                    .HasForeignKey(d => d.OrgId)
-                    .HasConstraintName("FK__Challenge__orgID__398D8EEE");
+                entity.Property(e => e.Title).HasColumnName("title");
             });
 
             modelBuilder.Entity<Challenges>(entity =>
@@ -128,7 +83,7 @@ namespace ReadingChallengeWebApi.Models
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasColumnName("name")
-                    .HasMaxLength(10);
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.NumGoal).HasColumnName("numGoal");
 
@@ -137,12 +92,12 @@ namespace ReadingChallengeWebApi.Models
                 entity.Property(e => e.Type)
                     .IsRequired()
                     .HasColumnName("type")
-                    .HasMaxLength(10);
+                    .HasMaxLength(50);
 
                 entity.HasOne(d => d.Org)
                     .WithMany(p => p.Challenges)
                     .HasForeignKey(d => d.OrgId)
-                    .HasConstraintName("FK__Challenge__orgID__440B1D61");
+                    .HasConstraintName("FK__Challenge__orgID__46E78A0C");
             });
 
             modelBuilder.Entity<Genres>(entity =>
@@ -153,27 +108,7 @@ namespace ReadingChallengeWebApi.Models
                     .HasColumnName("genreID")
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.Name)
-                    .HasColumnName("name")
-                    .HasMaxLength(255);
-            });
-
-            modelBuilder.Entity<Organization>(entity =>
-            {
-                entity.HasKey(e => e.OrgId);
-
-                entity.Property(e => e.OrgId)
-                    .HasColumnName("orgID")
-                    .ValueGeneratedNever();
-
-                entity.Property(e => e.Category)
-                    .HasColumnName("category")
-                    .HasMaxLength(10);
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(50);
+                entity.Property(e => e.Name).HasColumnName("name");
             });
 
             modelBuilder.Entity<Organizations>(entity =>
@@ -186,7 +121,7 @@ namespace ReadingChallengeWebApi.Models
 
                 entity.Property(e => e.Category)
                     .HasColumnName("category")
-                    .HasMaxLength(10);
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Name)
                     .IsRequired()
@@ -209,12 +144,12 @@ namespace ReadingChallengeWebApi.Models
                 entity.HasOne(d => d.OrgUser)
                     .WithMany(p => p.OrgUserChallenges)
                     .HasForeignKey(d => d.OrgUserId)
-                    .HasConstraintName("FK__OrgUserCh__orgUs__5165187F");
+                    .HasConstraintName("FK__OrgUserCh__orgUs__47DBAE45");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.OrgUserChallenges)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__OrgUserCh__userI__52593CB8");
+                    .HasConstraintName("FK__OrgUserCh__userI__48CFD27E");
             });
 
             modelBuilder.Entity<OrgUsers>(entity =>
@@ -232,12 +167,12 @@ namespace ReadingChallengeWebApi.Models
                 entity.HasOne(d => d.Challenge)
                     .WithMany(p => p.OrgUsers)
                     .HasForeignKey(d => d.ChallengeId)
-                    .HasConstraintName("FK__OrgUsers__challe__5070F446");
+                    .HasConstraintName("FK__OrgUsers__challe__4AB81AF0");
 
                 entity.HasOne(d => d.Org)
                     .WithMany(p => p.OrgUsers)
                     .HasForeignKey(d => d.OrgId)
-                    .HasConstraintName("FK__OrgUsers__orgID__44FF419A");
+                    .HasConstraintName("FK__OrgUsers__orgID__49C3F6B7");
             });
 
             modelBuilder.Entity<UserBooks>(entity =>
@@ -255,12 +190,12 @@ namespace ReadingChallengeWebApi.Models
                 entity.HasOne(d => d.Book)
                     .WithMany(p => p.UserBooks)
                     .HasForeignKey(d => d.BookId)
-                    .HasConstraintName("FK__UserBooks__bookI__534D60F1");
+                    .HasConstraintName("FK__UserBooks__bookI__4BAC3F29");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserBooks)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__UserBooks__userI__5441852A");
+                    .HasConstraintName("FK__UserBooks__userI__4CA06362");
             });
 
             modelBuilder.Entity<Users>(entity =>
@@ -278,7 +213,7 @@ namespace ReadingChallengeWebApi.Models
 
                 entity.Property(e => e.Lname)
                     .HasColumnName("lname")
-                    .HasMaxLength(50);
+                    .HasColumnType("numeric(18, 0)");
             });
         }
     }
