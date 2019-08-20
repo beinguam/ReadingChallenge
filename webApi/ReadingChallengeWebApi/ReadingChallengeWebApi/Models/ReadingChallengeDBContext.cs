@@ -213,7 +213,7 @@ namespace ReadingChallengeWebApi.Models
 
                 entity.Property(e => e.Lname)
                     .HasColumnName("lname")
-                    .HasColumnType("numeric(18, 0)");
+                    .HasMaxLength(50);
             });
         }
     }
