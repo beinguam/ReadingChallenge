@@ -11806,11 +11806,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Parents\\source\\repos\\ReadingChallengeWebApi\\ReadingChallengeWebApi\\ReadingChallengeWebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Parents\\Documents\\GitHub\\ReadingChallenge\\webApi\\ReadingChallengeWebApi\\ReadingChallengeWebApi\\ReadingChallengeWebApi.csproj",
       "projectName": "ReadingChallengeWebApi",
-      "projectPath": "C:\\Users\\Parents\\source\\repos\\ReadingChallengeWebApi\\ReadingChallengeWebApi\\ReadingChallengeWebApi.csproj",
+      "projectPath": "C:\\Users\\Parents\\Documents\\GitHub\\ReadingChallenge\\webApi\\ReadingChallengeWebApi\\ReadingChallengeWebApi\\ReadingChallengeWebApi.csproj",
       "packagesPath": "C:\\Users\\Parents\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Parents\\source\\repos\\ReadingChallengeWebApi\\ReadingChallengeWebApi\\obj\\",
+      "outputPath": "C:\\Users\\Parents\\Documents\\GitHub\\ReadingChallenge\\webApi\\ReadingChallengeWebApi\\ReadingChallengeWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
