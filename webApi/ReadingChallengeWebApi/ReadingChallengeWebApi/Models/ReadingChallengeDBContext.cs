@@ -18,6 +18,7 @@ namespace ReadingChallengeWebApi.Models
         public virtual DbSet<Authors> Authors { get; set; }
         public virtual DbSet<Books> Books { get; set; }
         public virtual DbSet<Challenges> Challenges { get; set; }
+        public virtual DbSet<ChallengeTypes> ChallengeTypes { get; set; }
         public virtual DbSet<Genres> Genres { get; set; }
         public virtual DbSet<Organizations> Organizations { get; set; }
         public virtual DbSet<OrgUserChallenges> OrgUserChallenges { get; set; }
@@ -89,15 +90,31 @@ namespace ReadingChallengeWebApi.Models
 
                 entity.Property(e => e.OrgId).HasColumnName("orgID");
 
-                entity.Property(e => e.Type)
-                    .IsRequired()
-                    .HasColumnName("type")
-                    .HasMaxLength(50);
+                entity.Property(e => e.Type).HasColumnName("type");
 
                 entity.HasOne(d => d.Org)
                     .WithMany(p => p.Challenges)
                     .HasForeignKey(d => d.OrgId)
-                    .HasConstraintName("FK__Challenge__orgID__46E78A0C");
+                    .HasConstraintName("FK__Challenge__orgID__49C3F6B7");
+
+                entity.HasOne(d => d.TypeNavigation)
+                    .WithMany(p => p.Challenges)
+                    .HasForeignKey(d => d.Type)
+                    .HasConstraintName("FK__Challenges__type__48CFD27E");
+            });
+
+            modelBuilder.Entity<ChallengeTypes>(entity =>
+            {
+                entity.HasKey(e => e.ChallengeTypeId);
+
+                entity.Property(e => e.ChallengeTypeId)
+                    .HasColumnName("challengeTypeID")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasColumnName("name")
+                    .HasMaxLength(50);
             });
 
             modelBuilder.Entity<Genres>(entity =>
@@ -144,12 +161,12 @@ namespace ReadingChallengeWebApi.Models
                 entity.HasOne(d => d.OrgUser)
                     .WithMany(p => p.OrgUserChallenges)
                     .HasForeignKey(d => d.OrgUserId)
-                    .HasConstraintName("FK__OrgUserCh__orgUs__47DBAE45");
+                    .HasConstraintName("FK__OrgUserCh__orgUs__4AB81AF0");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.OrgUserChallenges)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__OrgUserCh__userI__48CFD27E");
+                    .HasConstraintName("FK__OrgUserCh__userI__4BAC3F29");
             });
 
             modelBuilder.Entity<OrgUsers>(entity =>
@@ -167,12 +184,12 @@ namespace ReadingChallengeWebApi.Models
                 entity.HasOne(d => d.Challenge)
                     .WithMany(p => p.OrgUsers)
                     .HasForeignKey(d => d.ChallengeId)
-                    .HasConstraintName("FK__OrgUsers__challe__4AB81AF0");
+                    .HasConstraintName("FK__OrgUsers__challe__4D94879B");
 
                 entity.HasOne(d => d.Org)
                     .WithMany(p => p.OrgUsers)
                     .HasForeignKey(d => d.OrgId)
-                    .HasConstraintName("FK__OrgUsers__orgID__49C3F6B7");
+                    .HasConstraintName("FK__OrgUsers__orgID__4CA06362");
             });
 
             modelBuilder.Entity<UserBooks>(entity =>
@@ -190,12 +207,12 @@ namespace ReadingChallengeWebApi.Models
                 entity.HasOne(d => d.Book)
                     .WithMany(p => p.UserBooks)
                     .HasForeignKey(d => d.BookId)
-                    .HasConstraintName("FK__UserBooks__bookI__4BAC3F29");
+                    .HasConstraintName("FK__UserBooks__bookI__4E88ABD4");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserBooks)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__UserBooks__userI__4CA06362");
+                    .HasConstraintName("FK__UserBooks__userI__4F7CD00D");
             });
 
             modelBuilder.Entity<Users>(entity =>

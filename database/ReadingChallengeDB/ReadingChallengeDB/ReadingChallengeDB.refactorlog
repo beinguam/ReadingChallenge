@@ -56,4 +56,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="userBookID" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="c53d8125-f462-4207-b904-03b0b4cb8675" ChangeDateTime="08/20/2019 23:43:19">
+    <Property Name="ElementName" Value="[dbo].[ChallengeTypes].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ChallengeTypes]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ChallengeTypeID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c55675b8-206f-44e1-9557-af09f20b6256" ChangeDateTime="08/20/2019 23:43:29">
+    <Property Name="ElementName" Value="[dbo].[ChallengeTypes].[ChallengeTypeID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ChallengeTypes]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="challengeTypeID" />
+  </Operation>
 </Operations>
