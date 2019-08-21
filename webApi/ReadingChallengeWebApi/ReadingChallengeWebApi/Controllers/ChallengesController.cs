@@ -20,6 +20,13 @@ namespace ReadingChallengeWebApi.Controllers
             _context = context;
         }
 
+        // GET: api/[controller]/types
+        [HttpGet("types")]
+        public IEnumerable<ChallengeTypes> GetChallengeTypes()
+        {
+            return _context.ChallengeTypes;
+        }
+
         // GET: api/Challenges
         [HttpGet]
         public IEnumerable<Challenges> GetChallenges()

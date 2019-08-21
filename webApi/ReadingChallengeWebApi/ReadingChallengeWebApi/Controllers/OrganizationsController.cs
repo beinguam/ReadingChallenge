@@ -20,6 +20,13 @@ namespace ReadingChallengeWebApi.Controllers
             _context = context;
         }
 
+        // GET: api/[controller]/categories
+        [HttpGet("categories")]
+        public IEnumerable<OrganizationCategories> GetOrganizationCategories()
+        {
+            return _context.OrganizationCategories;
+        }
+
         // GET: api/Organizations
         [HttpGet]
         public IEnumerable<Organizations> GetOrganizations()
