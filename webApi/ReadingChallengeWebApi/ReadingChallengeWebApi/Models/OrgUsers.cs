@@ -11,8 +11,8 @@ namespace ReadingChallengeWebApi.Models
         }
 
         public int OrgUserId { get; set; }
-        public int? OrgId { get; set; }
-        public int? ChallengeId { get; set; }
+        public int OrgId { get; set; }
+        public int ChallengeId { get; set; }
 
         public Challenges Challenge { get; set; }
         public Organizations Org { get; set; }

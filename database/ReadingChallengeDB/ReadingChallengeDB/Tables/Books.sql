@@ -2,7 +2,7 @@
 (
 	[BookID] INT IDENTITY(1,1) NOT NULL PRIMARY KEY, 
     [Title] NVARCHAR(MAX) NOT NULL, 
-    [Author] NVARCHAR(MAX) NULL, 
+    [Author] INT FOREIGN KEY REFERENCES Authors(AuthorID) NULL, 
 	[Genre] INT FOREIGN KEY REFERENCES Genres(GenreID) NULL,
     [Pages] INT NULL
 )

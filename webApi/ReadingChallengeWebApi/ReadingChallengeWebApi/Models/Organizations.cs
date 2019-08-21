@@ -13,8 +13,9 @@ namespace ReadingChallengeWebApi.Models
 
         public int OrgId { get; set; }
         public string Name { get; set; }
-        public string Category { get; set; }
+        public int? Category { get; set; }
 
+        public OrganizationCategories CategoryNavigation { get; set; }
         public ICollection<Challenges> Challenges { get; set; }
         public ICollection<OrgUsers> OrgUsers { get; set; }
     }

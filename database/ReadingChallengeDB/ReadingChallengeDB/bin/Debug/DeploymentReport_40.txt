@@ -1,0 +1,26 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Books]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column Author in table [dbo].[Books] is currently  NVARCHAR (MAX) NULL but is being changed to  INT NULL.
+         Data loss could occur.
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[UserBooks] (Foreign Key)
+     Table rebuild
+       [dbo].[Books] (Table)
+     Create
+       Foreign Key: unnamed constraint on [dbo].[Books] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Books] (Foreign Key)
+
+** Supporting actions
+     Create
+       Foreign Key: unnamed constraint on [dbo].[UserBooks] (Foreign Key)
+
+The type for column Author in table [dbo].[Books] is currently  NVARCHAR (MAX) NULL but is being changed to  INT NULL. Data loss could occur.
+
