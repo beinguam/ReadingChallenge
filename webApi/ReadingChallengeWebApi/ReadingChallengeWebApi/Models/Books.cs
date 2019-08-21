@@ -12,10 +12,11 @@ namespace ReadingChallengeWebApi.Models
 
         public int BookId { get; set; }
         public string Title { get; set; }
-        public string Author { get; set; }
+        public int? Author { get; set; }
         public int? Genre { get; set; }
         public int? Pages { get; set; }
 
+        public Authors AuthorNavigation { get; set; }
         public Genres GenreNavigation { get; set; }
         public ICollection<UserBooks> UserBooks { get; set; }
     }
