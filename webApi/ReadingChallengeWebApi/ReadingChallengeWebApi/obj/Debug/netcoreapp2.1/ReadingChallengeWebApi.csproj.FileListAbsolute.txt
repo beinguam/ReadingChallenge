@@ -14,7 +14,6 @@ C:\Users\Parents\Documents\GitHub\ReadingChallenge\webApi\ReadingChallengeWebApi
 C:\Users\Parents\Documents\GitHub\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\bin\Debug\netcoreapp2.1\ReadingChallengeWebApi.runtimeconfig.dev.json
 C:\Users\Parents\Documents\GitHub\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\bin\Debug\netcoreapp2.1\ReadingChallengeWebApi.dll
 C:\Users\Parents\Documents\GitHub\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\bin\Debug\netcoreapp2.1\ReadingChallengeWebApi.pdb
-C:\Users\Parents\Documents\GitHub\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.csprojAssemblyReference.cache
 C:\Users\Parents\Documents\GitHub\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.csproj.CoreCompileInputs.cache
 C:\Users\Parents\Documents\GitHub\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.RazorAssemblyInfo.cache
 C:\Users\Parents\Documents\GitHub\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.RazorAssemblyInfo.cs
@@ -23,3 +22,4 @@ C:\Users\Parents\Documents\GitHub\ReadingChallenge\webApi\ReadingChallengeWebApi
 C:\Users\Parents\Documents\GitHub\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.RazorTargetAssemblyInfo.cache
 C:\Users\Parents\Documents\GitHub\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.dll
 C:\Users\Parents\Documents\GitHub\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.pdb
+C:\Users\Parents\Documents\GitHub\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.csprojAssemblyReference.cache
