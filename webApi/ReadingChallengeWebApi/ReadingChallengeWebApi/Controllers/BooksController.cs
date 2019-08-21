@@ -20,6 +20,20 @@ namespace ReadingChallengeWebApi.Controllers
             _context = context;
         }
 
+        // GET: api/[controller]/Authors
+        [HttpGet("authors")]
+        public IEnumerable<Authors> GetAuthors()
+        {
+            return _context.Authors;
+        }
+
+        // GET: api/[controller]/Authors
+        [HttpGet("genres")]
+        public IEnumerable<Genres> GetGenres()
+        {
+            return _context.Genres;
+        }
+
         // GET: api/Books
         [HttpGet]
         public IEnumerable<Books> GetBooks()
