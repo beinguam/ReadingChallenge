@@ -1,0 +1,33 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Authors] (Table)
+       [dbo].[Books] (Table)
+       [dbo].[Challenges] (Table)
+       [dbo].[ChallengeTypes] (Table)
+       [dbo].[Genres] (Table)
+       [dbo].[OrganizationCategories] (Table)
+       [dbo].[Organizations] (Table)
+       [dbo].[OrgUserChallenges] (Table)
+       [dbo].[OrgUsers] (Table)
+       [dbo].[UserBooks] (Table)
+       [dbo].[Users] (Table)
+       Foreign Key: unnamed constraint on [dbo].[Challenges] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Challenges] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[OrgUserChallenges] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[OrgUserChallenges] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[OrgUsers] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[OrgUsers] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserBooks] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserBooks] (Foreign Key)
+
+** Supporting actions

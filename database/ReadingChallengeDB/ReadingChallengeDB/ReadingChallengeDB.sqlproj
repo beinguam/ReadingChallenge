@@ -57,23 +57,27 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Scripts" />
+    <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Organizations.sql" />
-    <Build Include="Challenges.sql" />
-    <Build Include="Users.sql" />
-    <Build Include="OrgUsers.sql" />
-    <Build Include="OrgUserChallenges.sql" />
-    <Build Include="Authors.sql" />
-    <Build Include="Genres.sql" />
-    <Build Include="Books.sql" />
-    <Build Include="UserBooks.sql" />
-    <Build Include="ChallengeTypes.sql" />
+    <Build Include="Tables\Authors.sql" />
+    <Build Include="Tables\Books.sql" />
+    <Build Include="Tables\Challenges.sql" />
+    <Build Include="Tables\ChallengeTypes.sql" />
+    <Build Include="Tables\Genres.sql" />
+    <Build Include="Tables\Organizations.sql" />
+    <Build Include="Tables\OrganizationCategories.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="ReadingChallengeDB.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Scripts\Script.PostDeployment.ChallengeTypes.sql" />
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\OrgUserChallenges.sql" />
+    <Build Include="Tables\OrgUsers.sql" />
+    <Build Include="Tables\UserBooks.sql" />
+    <Build Include="Tables\Users.sql" />
   </ItemGroup>
 </Project>
