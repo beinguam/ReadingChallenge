@@ -20,15 +20,15 @@ USING (VALUES
   (2, N'Audio'), 
   (3, N'Video')
 ) 
-AS Source (challengeTypeID, name) 
-ON Target.challengeTypeID = Source.challengeTypeID 
+AS Source (ChallengeTypeID, Name) 
+ON Target.ChallengeTypeID = Source.ChallengeTypeID 
 
 WHEN MATCHED THEN 
-UPDATE SET name = Source.name
+UPDATE SET Name = Source.Name
 
 WHEN NOT MATCHED BY TARGET THEN 
-INSERT (challengeTypeID, name) 
-VALUES (challengeTypeID, name);
+INSERT (challengeTypeID, Name) 
+VALUES (challengeTypeID, Name);
 
 SET IDENTITY_INSERT ChallengeTypes OFF 
 GO
@@ -47,15 +47,40 @@ USING (VALUES
   (5, N'Library'),
   (6, N'School')
 ) 
-AS Source (OrganizationCategoryID, name) 
+AS Source (OrganizationCategoryID, Name) 
 ON Target.OrganizationCategoryID = Source.OrganizationCategoryID 
 
 WHEN MATCHED THEN 
-UPDATE SET name = Source.name
+UPDATE SET Name = Source.Name
 
 WHEN NOT MATCHED BY TARGET THEN 
-INSERT (OrganizationCategoryID, name) 
-VALUES (OrganizationCategoryID, name);
+INSERT (OrganizationCategoryID, Name) 
+VALUES (OrganizationCategoryID, Name);
 
 SET IDENTITY_INSERT OrganizationCategories OFF 
 GO
+
+--Insert default Genres
+SET IDENTITY_INSERT Genres ON 
+GO     
+
+
+MERGE INTO ReadingChallengeDB.dbo.Genres AS Target 
+USING (VALUES 
+  (1, N'Nonfiction'), 
+  (2, N'Fiction')  
+) 
+AS Source (GenreID, Name) 
+ON Target.GenreID = Source.GenreID 
+
+WHEN MATCHED THEN 
+UPDATE SET Name = Source.Name
+
+WHEN NOT MATCHED BY TARGET THEN 
+INSERT (GenreID, Name) 
+VALUES (GenreID, Name);
+
+SET IDENTITY_INSERT Genres OFF 
+GO
+
+--***************COMMENT THIS OUT FOR PRODUCTION AS THIS IS JUST TEST DATAQ)*****************--

@@ -1,7 +1,8 @@
 ﻿CREATE TABLE [dbo].[Books]
 (
-	[BookID] INT NOT NULL PRIMARY KEY, 
-    [Title] NVARCHAR(MAX) NULL, 
+	[BookID] INT IDENTITY(1,1) NOT NULL PRIMARY KEY, 
+    [Title] NVARCHAR(MAX) NOT NULL, 
     [Author] NVARCHAR(MAX) NULL, 
+	[Genre] INT FOREIGN KEY REFERENCES Genres(GenreID) NULL,
     [Pages] INT NULL
 )
