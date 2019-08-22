@@ -8,4 +8,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class OrganizationsService {
 
   constructor(private http: HttpClient) { }
+
+configUrl = 'http://localhost/api/organizations';
+
+getConfig() {  
+  return this.http.get(this.configUrl);
+}
 }
