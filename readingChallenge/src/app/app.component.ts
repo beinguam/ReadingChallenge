@@ -9,10 +9,10 @@ import { HammerGestureConfig } from '@angular/platform-browser';
 })
 export class AppComponent {
   title = 'Reading Challenge';  
-  content = null;
+  content = null;  
 
-  constructor(private os: OrganizationsService) {    
-  this.content=os.getConfig(); 
-  console.log(this.content);
+  constructor(private os: OrganizationsService) {        
+    this.os.getAll<any[]>().subscribe((data: any[]) => this.content = data)
+    console.log(this.content);
   }  
 }

@@ -26,6 +26,7 @@ namespace ReadingChallengeWebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             //var connection = @"Server=DESKTOP-79OEU72\SQLEXPRESS;Database=ReadingChallengeDB;Trusted_Connection=True;ConnectRetryCount=0";
@@ -40,6 +41,8 @@ namespace ReadingChallengeWebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(builder => builder.WithOrigins("*"));
 
             app.UseMvc();
         }
