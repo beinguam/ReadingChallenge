@@ -4,10 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { OrganizationsService } from './services/organizations.service';
+import { OrganizationsComponent } from './components/organizations/organizations.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OrganizationsComponent
   ],
   imports: [
     BrowserModule,
