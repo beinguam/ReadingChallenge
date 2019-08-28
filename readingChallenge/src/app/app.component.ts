@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { OrganizationsService } from './services/organizations.service';
-import { HammerGestureConfig } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +8,16 @@ import { HammerGestureConfig } from '@angular/platform-browser';
 })
 export class AppComponent {
   title = 'Reading Challenge';  
-  content = null;  
+  loading = null;
+  results = null;
 
-  constructor(private os: OrganizationsService) {        
-    this.os.getAll<any[]>().subscribe((data: any[]) => this.content = data)
-    console.log(this.content);
+  constructor(private os: OrganizationsService) {
+    this.loading = true;
+    this.os.getAll().subscribe((data) => {
+      this.loading = false;
+      this.results = data;
+      console.log(this.results);
+      });
+    
   }  
 }
