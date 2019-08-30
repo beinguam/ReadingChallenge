@@ -9,8 +9,7 @@ export class OrganizationsService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<any> {  
-    
-    return this.http.get("http://localhost/api/organizations");
+  getAll(): Observable<any> {
+    return this.http.get('http://localhost/api/organizations');
 }
 }

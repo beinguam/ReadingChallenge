@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { OrganizationsService } from './services/organizations.service';
 import { OrganizationsComponent } from './components/organizations/organizations.component';
 import { BooksComponent } from './components/books/books/books.component';
+import { AdministrationComponent } from './components/administration/administration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrganizationsComponent,
-    BooksComponent
+    BooksComponent,
+    AdministrationComponent
   ],
   imports: [
     BrowserModule,
