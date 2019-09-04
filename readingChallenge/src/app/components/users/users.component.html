@@ -1,2 +1,7 @@
-<p>Results:</p>
-<li *ngFor="let result of results">{{result.firstName + " " + result.lastName}}</li>
+<form>
+  <select formControlName="name">
+    <option>Choose a user</option>
+    <option *ngFor="let result of results">{{result.firstName + " " + result.lastName}}</option>
+  </select>
+  <button>Submit</button>
+</form>

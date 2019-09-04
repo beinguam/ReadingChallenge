@@ -1,2 +1,7 @@
-<p>Results:</p>
-<li *ngFor="let result of results">{{result.name}}</li>
+<form>
+  <select formControlName="name">
+    <option>Choose a challenge</option>
+    <option *ngFor="let result of results">{{result.name}}</option>
+  </select>
+  <button>Submit</button>
+</form>
