@@ -10,7 +10,7 @@ namespace ReadingChallengeWebApi.Models
             UserBooks = new HashSet<UserBooks>();
         }
 
-        public int BookId { get; set; }
+        public int Id { get; set; }
         public string Title { get; set; }
         public int? Author { get; set; }
         public int? Genre { get; set; }

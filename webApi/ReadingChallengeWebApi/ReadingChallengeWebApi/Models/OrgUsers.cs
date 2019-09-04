@@ -10,7 +10,7 @@ namespace ReadingChallengeWebApi.Models
             OrgUserChallenges = new HashSet<OrgUserChallenges>();
         }
 
-        public int OrgUserId { get; set; }
+        public int Id { get; set; }
         public int OrgId { get; set; }
         public int ChallengeId { get; set; }
 

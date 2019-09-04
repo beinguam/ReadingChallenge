@@ -40,19 +40,11 @@ namespace ReadingChallengeWebApi.Models
         {
             modelBuilder.Entity<Authors>(entity =>
             {
-                entity.HasKey(e => e.AuthorId);
-
-                entity.Property(e => e.AuthorId).HasColumnName("AuthorID");
-
                 entity.Property(e => e.Name).HasMaxLength(50);
             });
 
             modelBuilder.Entity<Books>(entity =>
             {
-                entity.HasKey(e => e.BookId);
-
-                entity.Property(e => e.BookId).HasColumnName("BookID");
-
                 entity.Property(e => e.Title).IsRequired();
 
                 entity.HasOne(d => d.AuthorNavigation)
@@ -68,10 +60,6 @@ namespace ReadingChallengeWebApi.Models
 
             modelBuilder.Entity<Challenges>(entity =>
             {
-                entity.HasKey(e => e.ChallengeId);
-
-                entity.Property(e => e.ChallengeId).HasColumnName("ChallengeID");
-
                 entity.Property(e => e.BeginDate).HasColumnType("date");
 
                 entity.Property(e => e.EndDate).HasColumnType("date");
@@ -97,10 +85,6 @@ namespace ReadingChallengeWebApi.Models
 
             modelBuilder.Entity<ChallengeTypes>(entity =>
             {
-                entity.HasKey(e => e.ChallengeTypeId);
-
-                entity.Property(e => e.ChallengeTypeId).HasColumnName("ChallengeTypeID");
-
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -108,19 +92,11 @@ namespace ReadingChallengeWebApi.Models
 
             modelBuilder.Entity<Genres>(entity =>
             {
-                entity.HasKey(e => e.GenreId);
-
-                entity.Property(e => e.GenreId).HasColumnName("GenreID");
-
                 entity.Property(e => e.Name).IsRequired();
             });
 
             modelBuilder.Entity<OrganizationCategories>(entity =>
             {
-                entity.HasKey(e => e.OrganizationCategoryId);
-
-                entity.Property(e => e.OrganizationCategoryId).HasColumnName("OrganizationCategoryID");
-
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -128,10 +104,6 @@ namespace ReadingChallengeWebApi.Models
 
             modelBuilder.Entity<Organizations>(entity =>
             {
-                entity.HasKey(e => e.OrgId);
-
-                entity.Property(e => e.OrgId).HasColumnName("OrgID");
-
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -144,10 +116,6 @@ namespace ReadingChallengeWebApi.Models
 
             modelBuilder.Entity<OrgUserChallenges>(entity =>
             {
-                entity.HasKey(e => e.OrgUserChallengeId);
-
-                entity.Property(e => e.OrgUserChallengeId).HasColumnName("OrgUserChallengeID");
-
                 entity.Property(e => e.OrgUserId).HasColumnName("OrgUserID");
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
@@ -167,10 +135,6 @@ namespace ReadingChallengeWebApi.Models
 
             modelBuilder.Entity<OrgUsers>(entity =>
             {
-                entity.HasKey(e => e.OrgUserId);
-
-                entity.Property(e => e.OrgUserId).HasColumnName("OrgUserID");
-
                 entity.Property(e => e.ChallengeId).HasColumnName("ChallengeID");
 
                 entity.Property(e => e.OrgId).HasColumnName("OrgID");
@@ -190,10 +154,6 @@ namespace ReadingChallengeWebApi.Models
 
             modelBuilder.Entity<UserBooks>(entity =>
             {
-                entity.HasKey(e => e.UserBookId);
-
-                entity.Property(e => e.UserBookId).HasColumnName("UserBookID");
-
                 entity.Property(e => e.BookId).HasColumnName("BookID");
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
@@ -213,10 +173,6 @@ namespace ReadingChallengeWebApi.Models
 
             modelBuilder.Entity<Users>(entity =>
             {
-                entity.HasKey(e => e.UserId);
-
-                entity.Property(e => e.UserId).HasColumnName("UserID");
-
                 entity.Property(e => e.FirstName)
                     .IsRequired()
                     .HasMaxLength(50);

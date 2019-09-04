@@ -55,7 +55,7 @@ namespace ReadingChallengeWebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != orgUsers.OrgUserId)
+            if (id != orgUsers.Id)
             {
                 return BadRequest();
             }
@@ -93,7 +93,7 @@ namespace ReadingChallengeWebApi.Controllers
             _context.OrgUsers.Add(orgUsers);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetOrgUsers", new { id = orgUsers.OrgUserId }, orgUsers);
+            return CreatedAtAction("GetOrgUsers", new { id = orgUsers.Id }, orgUsers);
         }
 
         // DELETE: api/OrgUsers/5
@@ -119,7 +119,7 @@ namespace ReadingChallengeWebApi.Controllers
 
         private bool OrgUsersExists(int id)
         {
-            return _context.OrgUsers.Any(e => e.OrgUserId == id);
+            return _context.OrgUsers.Any(e => e.Id == id);
         }
     }
 }

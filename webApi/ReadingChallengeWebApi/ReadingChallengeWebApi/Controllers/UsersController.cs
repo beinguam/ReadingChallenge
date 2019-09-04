@@ -55,7 +55,7 @@ namespace ReadingChallengeWebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != users.UserId)
+            if (id != users.Id)
             {
                 return BadRequest();
             }
@@ -97,7 +97,7 @@ namespace ReadingChallengeWebApi.Controllers
             }
             catch (DbUpdateException)
             {
-                if (UsersExists(users.UserId))
+                if (UsersExists(users.Id))
                 {
                     return new StatusCodeResult(StatusCodes.Status409Conflict);
                 }
@@ -107,7 +107,7 @@ namespace ReadingChallengeWebApi.Controllers
                 }
             }
 
-            return CreatedAtAction("GetUsers", new { id = users.UserId }, users);
+            return CreatedAtAction("GetUsers", new { id = users.Id }, users);
         }
 
         // DELETE: api/Users/5
@@ -133,7 +133,7 @@ namespace ReadingChallengeWebApi.Controllers
 
         private bool UsersExists(int id)
         {
-            return _context.Users.Any(e => e.UserId == id);
+            return _context.Users.Any(e => e.Id == id);
         }
     }
 }

@@ -62,7 +62,7 @@ namespace ReadingChallengeWebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != challenges.ChallengeId)
+            if (id != challenges.Id)
             {
                 return BadRequest();
             }
@@ -104,7 +104,7 @@ namespace ReadingChallengeWebApi.Controllers
             }
             catch (DbUpdateException)
             {
-                if (ChallengesExists(challenges.ChallengeId))
+                if (ChallengesExists(challenges.Id))
                 {
                     return new StatusCodeResult(StatusCodes.Status409Conflict);
                 }
@@ -114,7 +114,7 @@ namespace ReadingChallengeWebApi.Controllers
                 }
             }
 
-            return CreatedAtAction("GetChallenges", new { id = challenges.ChallengeId }, challenges);
+            return CreatedAtAction("GetChallenges", new { id = challenges.Id }, challenges);
         }
 
         // DELETE: api/Challenges/5
@@ -140,7 +140,7 @@ namespace ReadingChallengeWebApi.Controllers
 
         private bool ChallengesExists(int id)
         {
-            return _context.Challenges.Any(e => e.ChallengeId == id);
+            return _context.Challenges.Any(e => e.Id == id);
         }
     }
 }

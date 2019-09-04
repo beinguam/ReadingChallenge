@@ -55,7 +55,7 @@ namespace ReadingChallengeWebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != userBooks.UserBookId)
+            if (id != userBooks.Id)
             {
                 return BadRequest();
             }
@@ -93,7 +93,7 @@ namespace ReadingChallengeWebApi.Controllers
             _context.UserBooks.Add(userBooks);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUserBooks", new { id = userBooks.UserBookId }, userBooks);
+            return CreatedAtAction("GetUserBooks", new { id = userBooks.Id }, userBooks);
         }
 
         // DELETE: api/UserBooks/5
@@ -119,7 +119,7 @@ namespace ReadingChallengeWebApi.Controllers
 
         private bool UserBooksExists(int id)
         {
-            return _context.UserBooks.Any(e => e.UserBookId == id);
+            return _context.UserBooks.Any(e => e.Id == id);
         }
     }
 }

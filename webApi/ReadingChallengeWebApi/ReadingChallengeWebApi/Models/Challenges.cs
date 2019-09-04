@@ -10,7 +10,7 @@ namespace ReadingChallengeWebApi.Models
             OrgUsers = new HashSet<OrgUsers>();
         }
 
-        public int ChallengeId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public DateTime BeginDate { get; set; }
         public DateTime EndDate { get; set; }

@@ -10,7 +10,7 @@ namespace ReadingChallengeWebApi.Models
             Organizations = new HashSet<Organizations>();
         }
 
-        public int OrganizationCategoryId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public ICollection<Organizations> Organizations { get; set; }

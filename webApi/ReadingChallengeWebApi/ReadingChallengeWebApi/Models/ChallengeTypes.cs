@@ -10,7 +10,7 @@ namespace ReadingChallengeWebApi.Models
             Challenges = new HashSet<Challenges>();
         }
 
-        public int ChallengeTypeId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public ICollection<Challenges> Challenges { get; set; }
