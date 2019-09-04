@@ -1,0 +1,25 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Rename
+       [dbo].[Organizations].[Id] (Column)
+       [dbo].[Authors].[Id] (Column)
+       [dbo].[Books].[Id] (Column)
+       [dbo].[Challenges].[Id] (Column)
+       [dbo].[ChallengeTypes].[Id] (Column)
+       [dbo].[Genres].[Id] (Column)
+       [dbo].[OrganizationCategories].[Id] (Column)
+       [dbo].[OrgUserChallenges].[Id] (Column)
+       [dbo].[OrgUsers].[Id] (Column)
+       [dbo].[UserBooks].[Id] (Column)
+       [dbo].[Users].[Id] (Column)
+
+** Supporting actions

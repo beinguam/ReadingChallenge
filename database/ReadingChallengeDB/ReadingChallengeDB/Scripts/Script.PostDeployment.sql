@@ -20,15 +20,15 @@ USING (VALUES
   (2, N'Audio'), 
   (3, N'Video')
 ) 
-AS Source (ChallengeTypeID, Name) 
-ON Target.ChallengeTypeID = Source.ChallengeTypeID 
+AS Source (Id, Name) 
+ON Target.Id = Source.Id 
 
 WHEN MATCHED THEN 
 UPDATE SET Name = Source.Name
 
 WHEN NOT MATCHED BY TARGET THEN 
-INSERT (challengeTypeID, Name) 
-VALUES (challengeTypeID, Name);
+INSERT (Id, Name) 
+VALUES (Id, Name);
 
 SET IDENTITY_INSERT ChallengeTypes OFF 
 GO
@@ -47,15 +47,15 @@ USING (VALUES
   (5, N'Library'),
   (6, N'School')
 ) 
-AS Source (OrganizationCategoryID, Name) 
-ON Target.OrganizationCategoryID = Source.OrganizationCategoryID 
+AS Source (Id, Name) 
+ON Target.Id = Source.Id 
 
 WHEN MATCHED THEN 
 UPDATE SET Name = Source.Name
 
 WHEN NOT MATCHED BY TARGET THEN 
-INSERT (OrganizationCategoryID, Name) 
-VALUES (OrganizationCategoryID, Name);
+INSERT (Id, Name) 
+VALUES (Id, Name);
 
 SET IDENTITY_INSERT OrganizationCategories OFF 
 GO
@@ -70,15 +70,15 @@ USING (VALUES
   (1, N'Nonfiction'), 
   (2, N'Fiction')  
 ) 
-AS Source (GenreID, Name) 
-ON Target.GenreID = Source.GenreID 
+AS Source (Id, Name) 
+ON Target.Id = Source.Id 
 
 WHEN MATCHED THEN 
 UPDATE SET Name = Source.Name
 
 WHEN NOT MATCHED BY TARGET THEN 
-INSERT (GenreID, Name) 
-VALUES (GenreID, Name);
+INSERT (Id, Name) 
+VALUES (Id, Name);
 
 SET IDENTITY_INSERT Genres OFF 
 GO
