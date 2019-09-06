@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OrganizationsService {
-
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any> {

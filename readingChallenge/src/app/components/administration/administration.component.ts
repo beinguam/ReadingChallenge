@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { OrganizationsService } from '../../services/organizations.service';
+import { Organizations } from '../../models/organizations-model';
 
 @Component({
   selector: 'app-administration',
@@ -8,15 +9,13 @@ import { OrganizationsService } from '../../services/organizations.service';
   styleUrls: ['./administration.component.css']
 })
 export class AdministrationComponent implements OnInit {
-  loading = true;
-  results = null;
+  results: Organizations[];
 
   constructor(private os: OrganizationsService) {
   }
 
   ngOnInit() {
     this.os.getAll().subscribe((data) => {
-      this.loading = false;
       this.results = data;
     });
   }

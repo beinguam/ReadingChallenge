@@ -9,6 +9,8 @@ import { OrganizationsService } from './services/organizations.service';
 import { AdministrationComponent } from './components/administration/administration.component';
 import { UsersComponent } from './components/users/users.component';
 import { ChallengesComponent } from './components/challenges/challenges.component';
+import { UsersService } from './services/users.service';
+import { ChallengesService } from './services/challenges.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,7 @@ import { ChallengesComponent } from './components/challenges/challenges.componen
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [OrganizationsService],
+  providers: [OrganizationsService, UsersService, ChallengesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
