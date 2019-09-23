@@ -11,13 +11,15 @@ import { UsersComponent } from './components/users/users.component';
 import { ChallengesComponent } from './components/challenges/challenges.component';
 import { UsersService } from './services/users.service';
 import { ChallengesService } from './services/challenges.service';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdministrationComponent,
     UsersComponent,
-    ChallengesComponent
+    ChallengesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
