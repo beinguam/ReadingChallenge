@@ -7,7 +7,7 @@ namespace ReadingChallengeWebApi.Models
     {
         public Challenges()
         {
-            OrgUsers = new HashSet<OrgUsers>();
+            OrgUserChallenges = new HashSet<OrgUserChallenges>();
         }
 
         public int Id { get; set; }
@@ -20,6 +20,6 @@ namespace ReadingChallengeWebApi.Models
 
         public Organizations Org { get; set; }
         public ChallengeTypes TypeNavigation { get; set; }
-        public ICollection<OrgUsers> OrgUsers { get; set; }
+        public ICollection<OrgUserChallenges> OrgUserChallenges { get; set; }
     }
 }

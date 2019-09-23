@@ -1,0 +1,20 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[OrgUserChallenges] (Table)
+       [dbo].[OrgUsers] (Table)
+       Foreign Key: unnamed constraint on [dbo].[OrgUserChallenges] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[OrgUserChallenges] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[OrgUsers] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[OrgUsers] (Foreign Key)
+
+** Supporting actions

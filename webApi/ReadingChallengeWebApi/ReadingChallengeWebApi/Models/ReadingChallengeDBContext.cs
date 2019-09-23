@@ -116,40 +116,40 @@ namespace ReadingChallengeWebApi.Models
 
             modelBuilder.Entity<OrgUserChallenges>(entity =>
             {
+                entity.Property(e => e.ChallengeId).HasColumnName("ChallengeID");
+
                 entity.Property(e => e.OrgUserId).HasColumnName("OrgUserID");
 
-                entity.Property(e => e.UserId).HasColumnName("UserID");
+                entity.HasOne(d => d.Challenge)
+                    .WithMany(p => p.OrgUserChallenges)
+                    .HasForeignKey(d => d.ChallengeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__OrgUserCh__Chall__5FB337D6");
 
                 entity.HasOne(d => d.OrgUser)
                     .WithMany(p => p.OrgUserChallenges)
                     .HasForeignKey(d => d.OrgUserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrgUserCh__OrgUs__4F7CD00D");
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.OrgUserChallenges)
-                    .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrgUserCh__UserI__5070F446");
+                    .HasConstraintName("FK__OrgUserCh__OrgUs__5EBF139D");
             });
 
             modelBuilder.Entity<OrgUsers>(entity =>
             {
-                entity.Property(e => e.ChallengeId).HasColumnName("ChallengeID");
-
                 entity.Property(e => e.OrgId).HasColumnName("OrgID");
 
-                entity.HasOne(d => d.Challenge)
-                    .WithMany(p => p.OrgUsers)
-                    .HasForeignKey(d => d.ChallengeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrgUsers__Challe__52593CB8");
+                entity.Property(e => e.UserId).HasColumnName("UserID");
 
                 entity.HasOne(d => d.Org)
                     .WithMany(p => p.OrgUsers)
                     .HasForeignKey(d => d.OrgId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrgUsers__OrgID__5165187F");
+                    .HasConstraintName("FK__OrgUsers__OrgID__60A75C0F");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.OrgUsers)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__OrgUsers__UserID__619B8048");
             });
 
             modelBuilder.Entity<UserBooks>(entity =>

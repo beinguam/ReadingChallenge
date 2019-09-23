@@ -7,9 +7,9 @@ namespace ReadingChallengeWebApi.Models
     {
         public int Id { get; set; }
         public int OrgUserId { get; set; }
-        public int UserId { get; set; }
+        public int ChallengeId { get; set; }
 
+        public Challenges Challenge { get; set; }
         public OrgUsers OrgUser { get; set; }
-        public Users User { get; set; }
     }
 }
