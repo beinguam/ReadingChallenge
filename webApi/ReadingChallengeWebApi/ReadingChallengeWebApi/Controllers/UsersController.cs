@@ -27,6 +27,26 @@ namespace ReadingChallengeWebApi.Controllers
             return _context.Users;
         }
 
+        // GET: api/OrgUsers/5
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetOrgUsers([FromRoute] int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            //TODO: change to return the organzations for the supplied userid
+            var orgUsers = await _context.OrgUsers.FindAsync(id);
+
+            if (orgUsers == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(orgUsers);
+        }
+
         // GET: api/Users/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUsers([FromRoute] int id)
