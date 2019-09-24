@@ -6,7 +6,7 @@ import { ChallengesComponent } from '../components/challenges/challenges.compone
 import { LoginComponent } from '../components/login/login.component';
 
 const routes: Routes = [
-        { path: 'login', component: LoginComponent},
+        { path: '', component: LoginComponent},
         { path: 'admin', component: AdministrationComponent},
         { path: 'users', component: UsersComponent},
         { path: 'challenges', component: ChallengesComponent},
