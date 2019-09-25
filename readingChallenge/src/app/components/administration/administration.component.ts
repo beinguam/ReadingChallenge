@@ -10,13 +10,15 @@ import { Organizations } from '../../models/organizations-model';
 })
 export class AdministrationComponent implements OnInit {
   results: Organizations[];
+  userId = 1;
 
   constructor(private os: OrganizationsService) {
   }
 
   ngOnInit() {
-    this.os.getAll().subscribe((data) => {
+    this.os.getOrganization(this.userId).subscribe((data) => {
       this.results = data;
+      console.log(this.results);
     });
   }
 
