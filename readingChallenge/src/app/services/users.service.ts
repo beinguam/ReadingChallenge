@@ -12,4 +12,7 @@ export class UsersService {
   getAll(): Observable<any> {
     return this.http.get('http://localhost/api/users');
 }
+  getUser(id: number): Observable<any> {
+    return this.http.get('http://localhost/api/users/' + id);
+  }
 }
