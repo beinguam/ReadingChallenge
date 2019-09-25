@@ -29,14 +29,22 @@ namespace ReadingChallengeWebApi.Controllers
 
         // GET: api/OrgUsers/5
         [HttpGet("organizations/{id}")]
-        public List<OrgUsers> GetOrgUsers([FromRoute] int id)
-        {            
-            var orgUsers = _context.OrgUsers
-                .Where(c => c.UserId == id)
-                .Include(c => c.Org)
-                .ToList();
+        public async Task<IActionResult> GetOrgUsers([FromRoute] int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-            return orgUsers;
+            var orgUsers = await _context.OrgUsers.Where(x => x.UserId == id).ToListAsync();
+            var organizations = _context.Organizations.Where(x => x == orgUsers.UserId).ToListAsync();
+
+            if (orgUsers == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(orgUsers);
         }
 
         // GET: api/Users/5
