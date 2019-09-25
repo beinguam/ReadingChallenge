@@ -29,12 +29,13 @@ namespace ReadingChallengeWebApi.Controllers
 
         // GET: api/OrgUsers/5
         [HttpGet("organizations/{id}")]
-        public IEnumerable<OrgUsers> GetOrgUsers([FromRoute] int id)
-        {   
-            var orgUsers = from o in _context.OrgUsers.Include(org => org.Org)
-                           where o.UserId == id
-                           select o;
-            
+        public List<OrgUsers> GetOrgUsers([FromRoute] int id)
+        {            
+            var orgUsers = _context.OrgUsers
+                .Where(c => c.UserId == id)
+                .Include(c => c.Org)
+                .ToList();
+
             return orgUsers;
         }
 
