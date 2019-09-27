@@ -26,29 +26,7 @@ namespace ReadingChallengeWebApi.Controllers
         {
             return _context.Users;
         }
-
-        // GET: api/organizations/5
-        [HttpGet("organizations/{id}")]
-        public async Task<IActionResult> GetOrgUsers([FromRoute] int id) //UserId
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var orgUsers = await _context.OrgUsers.Where(x => x.UserId == id).ToListAsync();
-            var organizations = await _context.Organizations.ToListAsync();
-
-            //var organizations = await _context.Organizations.FindAsync(id);
-
-            if (organizations == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(organizations);
-        }
-
+        
         // GET: api/Users/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUsers([FromRoute] int id)

@@ -1,0 +1,4 @@
+D:\Projects\GitHub\ReadingChallenge\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp3.0\ReadingChallengeWebApi.csprojAssemblyReference.cache
+D:\Projects\GitHub\ReadingChallenge\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp3.0\ReadingChallengeWebApi.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\GitHub\ReadingChallenge\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp3.0\ReadingChallengeWebApi.AssemblyInfoInputs.cache
+D:\Projects\GitHub\ReadingChallenge\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp3.0\ReadingChallengeWebApi.AssemblyInfo.cs
