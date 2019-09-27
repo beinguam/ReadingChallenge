@@ -27,9 +27,9 @@ namespace ReadingChallengeWebApi.Controllers
             return _context.Users;
         }
 
-        // GET: api/OrgUsers/5
+        // GET: api/organizations/5
         [HttpGet("organizations/{id}")]
-        public async Task<IActionResult> GetOrgUsers([FromRoute] int id)
+        public async Task<IActionResult> GetOrgUsers([FromRoute] int id) //UserId
         {
             if (!ModelState.IsValid)
             {
@@ -37,14 +37,16 @@ namespace ReadingChallengeWebApi.Controllers
             }
 
             var orgUsers = await _context.OrgUsers.Where(x => x.UserId == id).ToListAsync();
-            var organizations = _context.Organizations.Where(x => x == orgUsers.UserId).ToListAsync();
+            var organizations = await _context.Organizations.ToListAsync();
 
-            if (orgUsers == null)
+            //var organizations = await _context.Organizations.FindAsync(id);
+
+            if (organizations == null)
             {
                 return NotFound();
             }
 
-            return Ok(orgUsers);
+            return Ok(organizations);
         }
 
         // GET: api/Users/5
