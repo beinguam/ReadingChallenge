@@ -30,7 +30,7 @@ namespace ReadingChallengeWebApi
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             //var connection = @"Server=DESKTOP-79OEU72\SQLEXPRESS;Database=ReadingChallengeDB;Trusted_Connection=True;ConnectRetryCount=0";
-            var connection = @"Server=DESKTOP-79OEU72\SQLEXPRESS;Database=ReadingChallengeDB;integrated security=False;User ID=ReadingChallenge;Password=rc!123";
+            var connection = @"Server=DESKTOP-JFG27KG\SQLEXPRESS;Database=ReadingChallengeDB;integrated security=False;User ID=ReadingChallenge;Password=rc!123";
             services.AddDbContext<Models.ReadingChallengeDBContext>(options => options.UseSqlServer(connection));
         }
 
