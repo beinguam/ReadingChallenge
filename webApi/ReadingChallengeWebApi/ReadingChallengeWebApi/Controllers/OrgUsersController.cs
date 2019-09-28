@@ -48,21 +48,11 @@ namespace ReadingChallengeWebApi.Controllers
 
         // GET: api/OrgUsers/UserId
         [HttpGet("organizations/{id}")]
-        public  IEnumerable<OrgUsers> GetOrganizations([FromRoute] int id)
+        public IEnumerable<OrgUsers> GetOrganizations([FromRoute] int id)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return BadRequest(ModelState);
-            //}
+            var UserOrgs = _context.OrgUsers.Where(x => x.UserId == id);
 
-            var orgUsers = _context.OrgUsers.Where(x => x.UserId == id).Include(orgUser => orgUser.Org);            
-
-            //if (orgUsers == null)
-            //{
-            //    return NotFound();
-            //}
-
-            return orgUsers;
+            return UserOrgs;
         }
 
         // PUT: api/OrgUsers/5
