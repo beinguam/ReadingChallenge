@@ -27,6 +27,15 @@ namespace ReadingChallengeWebApi.Controllers
             return _context.OrganizationCategories;
         }
 
+        // GET: api/Organizations/User/5
+        [HttpGet("user/{id}")]
+        public ActionResult GetUser([FromRoute] int id)
+        {
+            var userOrgs = _context.OrgUsers.Include(x => x.Org).Where(x => x.UserId == id);
+            
+            return Ok(userOrgs);
+        }
+
         // GET: api/Organizations
         [HttpGet]
         public IEnumerable<Organizations> GetOrganizations()

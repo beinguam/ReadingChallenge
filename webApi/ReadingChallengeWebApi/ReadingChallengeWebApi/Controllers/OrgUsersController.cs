@@ -46,15 +46,6 @@ namespace ReadingChallengeWebApi.Controllers
             return Ok(orgUsers);
         }
 
-        // GET: api/OrgUsers/UserId
-        [HttpGet("organizations/{id}")]
-        public async Task<IActionResult> GetOrganizations([FromRoute] int id)
-        {
-            var UserOrgs = _context.OrgUsers.Include(x => x.Org).Where(x => x.UserId == id).ToList();
-
-            return Ok(UserOrgs);
-        }
-
         // PUT: api/OrgUsers/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutOrgUsers([FromRoute] int id, [FromBody] OrgUsers orgUsers)
