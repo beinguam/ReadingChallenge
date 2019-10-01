@@ -27,6 +27,31 @@ namespace ReadingChallengeWebApi.Controllers
             return _context.ChallengeTypes;
         }
 
+        // GET: api/Challenges/User/5 --Get challenges by user
+        [HttpGet("user/{id}")]
+        public ActionResult GetUser([FromRoute] int id)
+        {
+            var userOrgs = _context.OrgUsers
+                .Where(x => x.UserId == id)
+                    .Include(x => x.OrgUserChallenges)
+                        .ThenInclude(c => c.Challenge)
+                .Select(o => new { o.OrgUserChallenges });
+
+
+            //var userOrgs = _context.OrgUsers
+            //    .Where(x => x.UserId == id)
+            //    .Include(x => x.OrgUserChallenges)
+            //    .ThenInclude(x => x.org
+            //.Select(o => new { o.OrgUserChallenges });
+
+            //var userOrgs = _context.OrgUsers
+            //    .Where(x => x.UserId == id)
+            //    .Include(ou => ou.Org)
+            //    .Select(o => new { o.Org.Id, o.OrgId, o.Org.Name });
+
+            return Ok(userOrgs);
+        }
+
         // GET: api/Challenges
         [HttpGet]
         public IEnumerable<Challenges> GetChallenges()
