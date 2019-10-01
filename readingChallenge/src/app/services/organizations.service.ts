@@ -12,6 +12,6 @@ export class OrganizationsService {
     return this.http.get('http://localhost/api/organizations');
 }
   getOrganization(id: number): Observable<any> {
-    return this.http.get('http://localhost/api/users/organizations/' + id);
+    return this.http.get('http://localhost/api/organizations/user/' + id);
 }
 }
