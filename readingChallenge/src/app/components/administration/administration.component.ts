@@ -24,10 +24,9 @@ export class AdministrationComponent implements OnInit {
     });
   }
 
-  choseOrganization() {
-    this.challenges.chooseChallenge(this.userId).subscribe((data) => {
+  choseOrganization(event: { target: { value: number; }; }) {        
+    this.challenges.chooseChallenge(event.target.value).subscribe((data) => {
       this.chalResults = data;      
-      console.log(this.chalResults);
     });
   }
 }

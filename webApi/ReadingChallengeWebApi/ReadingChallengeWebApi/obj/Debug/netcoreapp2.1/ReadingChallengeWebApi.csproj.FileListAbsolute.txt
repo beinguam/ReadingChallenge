@@ -38,3 +38,4 @@ D:\Projects\GitHub\ReadingChallenge\ReadingChallenge\webApi\ReadingChallengeWebA
 D:\Projects\GitHub\ReadingChallenge\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.RazorTargetAssemblyInfo.cache
 D:\Projects\GitHub\ReadingChallenge\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.dll
 D:\Projects\GitHub\ReadingChallenge\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.pdb
+D:\Projects\GitHub\ReadingChallenge\ReadingChallenge\webApi\ReadingChallengeWebApi\ReadingChallengeWebApi\obj\Debug\netcoreapp2.1\ReadingChallengeWebApi.csprojAssemblyReference.cache

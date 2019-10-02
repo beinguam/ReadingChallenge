@@ -27,21 +27,20 @@ namespace ReadingChallengeWebApi.Controllers
             return _context.ChallengeTypes;
         }
 
-        // GET: api/Challenges/User/5 --Get challenges by user
-        [HttpGet("user/{id}")]
+        // GET: api/Challenges/User/5 --Get challenges by organization
+        [HttpGet("organizations/{id}")]
         public ActionResult GetUser([FromRoute] int id)
         {
-            //var userOrgs = _context.OrgUsers
-            //    .Where(orgUser => orgUser.UserId == id)
-            //    .Include(orgUser => orgUser.OrgUserChallenges.);
-            //    .ThenInclude(challenge => challenge.Challenge)
-            //    .Select(o => new { o.OrgUserChallenges });
-            //.Select(orgUser => new { orgUser.OrgUserChallenges });
-
-            var userOrgs = _context.OrgUsers
-              .Where(x => x.UserId == id)
-              .Include(ou => ou.Org)
-              .Select(o => new { o.Org.Id, o.OrgId, o.Org.Name });
+            var userOrgs = from o in _context.OrgUsers
+                           join c in _context.Challenges on o.OrgId equals c.OrgId
+                           where o.UserId == id
+                           select c;
+            //var userOrgs =
+            //    from orgUser in _context.OrgUsers
+            //    join challenge in _context.Challenges on orgUser.OrgId equals challenge.OrgId
+            //    where orgUser.UserId == id
+            //    select challenge;
+            //select new { challenge.Name };
 
             return Ok(userOrgs);
         }

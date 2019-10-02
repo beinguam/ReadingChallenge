@@ -1,10 +1,8 @@
-<form>
-  <select formControlName="name">
-    <option>Choose Organization</option>
-    <option *ngFor="let result of results">{{result.name}}</option>
-  </select>  
-</form>
-<button (click)="choseOrganization()">Submit</button>
+<select id="organization" formControlName="organization" (change)="choseOrganization($event)">
+  <option>Choose Organization</option>
+  <option *ngFor="let result of results" [value]="result.id">{{result.name}}</option>
+</select>
+
 <div *ngIf="chalResults">
   <p *ngFor="let chalResult of chalResults">{{chalResult.name}}</p>
 </div>
