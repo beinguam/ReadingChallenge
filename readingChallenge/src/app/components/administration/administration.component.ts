@@ -15,7 +15,7 @@ export class AdministrationComponent implements OnInit {
   userId = 1;
   chalResults: Challenges[];
 
-  constructor(private os: OrganizationsService, private c: ChallengesService) {
+  constructor(private os: OrganizationsService, private challenges: ChallengesService) {
   }
 
   ngOnInit() {
@@ -25,8 +25,9 @@ export class AdministrationComponent implements OnInit {
   }
 
   choseOrganization() {
-    this.c.getAll().subscribe((data) => {
+    this.challenges.chooseChallenge(this.userId).subscribe((data) => {
       this.chalResults = data;      
+      console.log(this.chalResults);
     });
   }
 }

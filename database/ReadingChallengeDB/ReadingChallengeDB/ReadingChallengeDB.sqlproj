@@ -75,7 +75,6 @@
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\OrgUserChallenges.sql" />
     <Build Include="Tables\OrgUsers.sql" />
     <Build Include="Tables\UserBooks.sql" />
     <Build Include="Tables\Users.sql" />

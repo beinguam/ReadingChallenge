@@ -11,5 +11,9 @@ export class ChallengesService {
 
   getAll(): Observable<any> {
     return this.http.get('http://localhost/api/challenges');
-}
+  }
+
+  chooseChallenge(id: number): Observable<any> {
+    return this.http.get('http://localhost/api/challenges/user/' + id);
+  }
 }

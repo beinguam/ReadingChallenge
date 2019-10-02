@@ -22,7 +22,6 @@ namespace ReadingChallengeWebApi.Models
         public virtual DbSet<Genres> Genres { get; set; }
         public virtual DbSet<OrganizationCategories> OrganizationCategories { get; set; }
         public virtual DbSet<Organizations> Organizations { get; set; }
-        public virtual DbSet<OrgUserChallenges> OrgUserChallenges { get; set; }
         public virtual DbSet<OrgUsers> OrgUsers { get; set; }
         public virtual DbSet<UserBooks> UserBooks { get; set; }
         public virtual DbSet<Users> Users { get; set; }
@@ -32,7 +31,7 @@ namespace ReadingChallengeWebApi.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-79OEU72\\SQLEXPRESS;Database=ReadingChallengeDB;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-JFG27KG\\SQLEXPRESS;Database=ReadingChallengeDB;Trusted_Connection=True;");
             }
         }
 
@@ -50,12 +49,12 @@ namespace ReadingChallengeWebApi.Models
                 entity.HasOne(d => d.AuthorNavigation)
                     .WithMany(p => p.Books)
                     .HasForeignKey(d => d.Author)
-                    .HasConstraintName("FK__Books__Author__4AB81AF0");
+                    .HasConstraintName("FK__Books__Author__48CFD27E");
 
                 entity.HasOne(d => d.GenreNavigation)
                     .WithMany(p => p.Books)
                     .HasForeignKey(d => d.Genre)
-                    .HasConstraintName("FK__Books__Genre__4BAC3F29");
+                    .HasConstraintName("FK__Books__Genre__49C3F6B7");
             });
 
             modelBuilder.Entity<Challenges>(entity =>
@@ -74,13 +73,13 @@ namespace ReadingChallengeWebApi.Models
                     .WithMany(p => p.Challenges)
                     .HasForeignKey(d => d.OrgId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Challenge__OrgID__4D94879B");
+                    .HasConstraintName("FK__Challenge__OrgID__4BAC3F29");
 
                 entity.HasOne(d => d.TypeNavigation)
                     .WithMany(p => p.Challenges)
                     .HasForeignKey(d => d.Type)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Challenges__Type__4CA06362");
+                    .HasConstraintName("FK__Challenges__Type__4AB81AF0");
             });
 
             modelBuilder.Entity<ChallengeTypes>(entity =>
@@ -111,26 +110,7 @@ namespace ReadingChallengeWebApi.Models
                 entity.HasOne(d => d.CategoryNavigation)
                     .WithMany(p => p.Organizations)
                     .HasForeignKey(d => d.Category)
-                    .HasConstraintName("FK__Organizat__Categ__4E88ABD4");
-            });
-
-            modelBuilder.Entity<OrgUserChallenges>(entity =>
-            {
-                entity.Property(e => e.ChallengeId).HasColumnName("ChallengeID");
-
-                entity.Property(e => e.OrgUserId).HasColumnName("OrgUserID");
-
-                entity.HasOne(d => d.Challenge)
-                    .WithMany(p => p.OrgUserChallenges)
-                    .HasForeignKey(d => d.ChallengeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrgUserCh__Chall__5FB337D6");
-
-                entity.HasOne(d => d.OrgUser)
-                    .WithMany(p => p.OrgUserChallenges)
-                    .HasForeignKey(d => d.OrgUserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrgUserCh__OrgUs__5EBF139D");
+                    .HasConstraintName("FK__Organizat__Categ__4CA06362");
             });
 
             modelBuilder.Entity<OrgUsers>(entity =>
@@ -143,13 +123,13 @@ namespace ReadingChallengeWebApi.Models
                     .WithMany(p => p.OrgUsers)
                     .HasForeignKey(d => d.OrgId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrgUsers__OrgID__60A75C0F");
+                    .HasConstraintName("FK__OrgUsers__OrgID__4D94879B");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.OrgUsers)
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrgUsers__UserID__619B8048");
+                    .HasConstraintName("FK__OrgUsers__UserID__4E88ABD4");
             });
 
             modelBuilder.Entity<UserBooks>(entity =>
@@ -162,13 +142,13 @@ namespace ReadingChallengeWebApi.Models
                     .WithMany(p => p.UserBooks)
                     .HasForeignKey(d => d.BookId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__UserBooks__BookI__534D60F1");
+                    .HasConstraintName("FK__UserBooks__BookI__4F7CD00D");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserBooks)
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__UserBooks__UserI__5441852A");
+                    .HasConstraintName("FK__UserBooks__UserI__5070F446");
             });
 
             modelBuilder.Entity<Users>(entity =>

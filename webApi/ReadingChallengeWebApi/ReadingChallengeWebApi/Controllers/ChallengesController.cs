@@ -31,11 +31,17 @@ namespace ReadingChallengeWebApi.Controllers
         [HttpGet("user/{id}")]
         public ActionResult GetUser([FromRoute] int id)
         {
+            //var userOrgs = _context.OrgUsers
+            //    .Where(orgUser => orgUser.UserId == id)
+            //    .Include(orgUser => orgUser.OrgUserChallenges.);
+            //    .ThenInclude(challenge => challenge.Challenge)
+            //    .Select(o => new { o.OrgUserChallenges });
+            //.Select(orgUser => new { orgUser.OrgUserChallenges });
+
             var userOrgs = _context.OrgUsers
-                .Where(orgUser => orgUser.UserId == id)
-                .Include(orgUser => orgUser.OrgUserChallenges)
-                .ThenInclude(challenge => challenge.Challenge)
-                .Select(orgUser => new { orgUser.OrgUserChallenges });            
+              .Where(x => x.UserId == id)
+              .Include(ou => ou.Org)
+              .Select(o => new { o.Org.Id, o.OrgId, o.Org.Name });
 
             return Ok(userOrgs);
         }
