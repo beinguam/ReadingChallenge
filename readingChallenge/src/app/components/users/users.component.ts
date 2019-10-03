@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import { Users } from '../../models/users-model';
 import { Organizations } from 'src/app/models/organizations-model';
+import { OrganizationsService } from '../../services/organizations.service';
 
 @Component({
   selector: 'app-users',
@@ -11,20 +12,21 @@ import { Organizations } from 'src/app/models/organizations-model';
 })
 export class UsersComponent implements OnInit {
   results: Users[];
-  userResults: Organizations[];
+  userResults: Organizations[];  
 
-  constructor(private us: UsersService) {
+  constructor(private us: UsersService, private os: OrganizationsService) {
   }
 
-  ngOnInit() {
+  ngOnInit() {   
+    console.log(sessionStorage.getItem('orgId'));
     this.us.getAll().subscribe((data) => {
       this.results = data;
     });
-  }
-  choseUser(event: { target: { value: number; }; }) {        
-    this.us.getOrganizations(event.target.value).subscribe((data) => {
-      this.userResults = data;       
-      console.log(data);
-    });
-  }
+  }  
+
+
+  //getUsers(this.orgId).subscribe((data) => {
+  //  this.results = data;      
+  //});
+  //}
 }

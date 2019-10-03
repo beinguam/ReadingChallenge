@@ -12,7 +12,8 @@ import { Challenges } from 'src/app/models/challenges-model';
 })
 export class AdministrationComponent implements OnInit {
   results: Organizations[];
-  userId = 1;
+  userId: number = 1;
+  orgId: number;
   chalResults: Challenges[];
 
   constructor(private os: OrganizationsService, private challenges: ChallengesService) {
@@ -24,7 +25,10 @@ export class AdministrationComponent implements OnInit {
     });
   }
 
-  choseOrganization(event: { target: { value: number; }; }) {        
+  choseOrganization(event: { target: { value: number; }; }) {
+    
+    sessionStorage.setItem('orgId', JSON.stringify(event.target.value));       
+
     this.challenges.chooseChallenge(event.target.value).subscribe((data) => {
       this.chalResults = data;         
     });

@@ -14,8 +14,5 @@ export class UsersService {
 }
   getUser(id: number): Observable<any> {
     return this.http.get('http://localhost/api/users/' + id);
-  }
-  getOrganizations(id: number): Observable<any> {
-    return this.http.get('http://localhost/api/user/organizations/' + id);
-  }
+  }  
 }

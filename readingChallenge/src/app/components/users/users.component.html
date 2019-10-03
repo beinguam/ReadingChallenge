@@ -3,6 +3,17 @@
   <option *ngFor="let result of results" [value]="result.id">{{result.firstName + " " + result.lastName}}</option>
 </select>
 
-<div *ngIf="userResults">
-  <p *ngFor="let userResult of userResults">{{userResult.firstName + " " + userResult.lastName}}}</p>
+<div *ngIf="orgResults">
+  <p *ngFor="let orgResult of orgResults">{{orgResult.name }}</p>
 </div>
+
+<!--
+<select id="organization" formControlName="organization" (change)="choseOrganization($event)">
+  <option>Choose Organization</option>
+  <option *ngFor="let result of results" [value]="result.id">{{result.name}}</option>
+</select>
+
+<div *ngIf="chalResults">
+  <p *ngFor="let chalResult of chalResults">{{chalResult.name + " " + chalResult.beginDate + " " + chalResult.endDate}}</p>
+</div>
+-->
