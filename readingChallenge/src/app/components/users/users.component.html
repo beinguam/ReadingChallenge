@@ -1,4 +1,8 @@
-<select id="users" formControlName="users">
+<select id="users" formControlName="users" (change)="choseUser($event)">
   <option>Choose a user</option>
   <option *ngFor="let result of results" [value]="result.id">{{result.firstName + " " + result.lastName}}</option>
 </select>
+
+<div *ngIf="userResults">
+  <p *ngFor="let userResult of userResults">{{userResult.firstName + " " + userResult.lastName}}}</p>
+</div>
