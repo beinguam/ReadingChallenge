@@ -13,22 +13,19 @@ import { OrganizationsService } from '../../services/organizations.service';
 export class UsersComponent implements OnInit {
   results: Users[];
   orgResults: Organizations[];  
-  orgId: number;  
+  orgId: string;  
 
   constructor(private us: UsersService, private os: OrganizationsService) {
   }
 
   ngOnInit() {       
-    this.orgId = +(sessionStorage.getItem("orgId"));
-    console.log(this.orgId);
-    
     this.us.getAll().subscribe((data) => {
       this.results = data;
     });
   }
 
-  choseUser(){
-    this.us.getUsers(this.orgId).subscribe((data) => {
+  choseUser(event: { target: { value: string; }; }){
+    this.us.getUsers(event.target.value).subscribe((data) => {
       this.orgResults = data;
     });
   }

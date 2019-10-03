@@ -13,7 +13,7 @@ export class ChallengesService {
     return this.http.get('http://localhost/api/challenges');
   }
 
-  chooseChallenge(id: number): Observable<any> {
+  chooseChallenge(id): Observable<any> {
     return this.http.get('http://localhost/api/challenges/organizations/' + id);
   }
 }

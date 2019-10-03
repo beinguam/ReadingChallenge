@@ -14,6 +14,7 @@ export class AdministrationComponent implements OnInit {
   results: Organizations[];
   userId: number = 1;  
   chalResults: Challenges[];
+  orgId: number;
 
   constructor(private os: OrganizationsService, private challenges: ChallengesService) {
   }
@@ -24,12 +25,15 @@ export class AdministrationComponent implements OnInit {
     });
   }
 
-  choseOrganization(event: { target: { value: number; }; }) {
+  choseOrganization(event: { target: { value: string; }; }) {
+    //sessionStorage.setItem("orgId", JSON.stringify(event.target.value));
+    sessionStorage.setItem("orgId", event.target.value);
     
-    sessionStorage.setItem("orgId", JSON.stringify(event.target.value));       
+    //this.orgId = parseInt(event.target.value);
 
     this.challenges.chooseChallenge(event.target.value).subscribe((data) => {
       this.chalResults = data;         
     });
   }
 }
+ 
