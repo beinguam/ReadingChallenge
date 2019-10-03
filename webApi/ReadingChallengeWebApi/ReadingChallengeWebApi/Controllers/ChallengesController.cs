@@ -34,13 +34,7 @@ namespace ReadingChallengeWebApi.Controllers
             var userOrgs = from o in _context.OrgUsers
                            join c in _context.Challenges on o.OrgId equals c.OrgId
                            where o.UserId == id
-                           select c;
-            //var userOrgs =
-            //    from orgUser in _context.OrgUsers
-            //    join challenge in _context.Challenges on orgUser.OrgId equals challenge.OrgId
-            //    where orgUser.UserId == id
-            //    select challenge;
-            //select new { challenge.Name };
+                           select c;            
 
             return Ok(userOrgs);
         }
