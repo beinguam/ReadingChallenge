@@ -1,7 +1,4 @@
-<form>
-  <select formControlName="name">
-    <option>Choose a user</option>
-    <option *ngFor="let result of results">{{result.firstName + " " + result.lastName}}</option>
-  </select>
-  <button>Submit</button>
-</form>
+<select id="users" formControlName="users">
+  <option>Choose a user</option>
+  <option *ngFor="let result of results" [value]="result.id">{{result.firstName + " " + result.lastName}}</option>
+</select>

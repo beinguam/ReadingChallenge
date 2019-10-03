@@ -4,5 +4,5 @@
 </select>
 
 <div *ngIf="chalResults">
-  <p *ngFor="let chalResult of chalResults">{{chalResult.name + chalResult.BeginDate }}</p>
+  <p *ngFor="let chalResult of chalResults">{{chalResult.name + " " + chalResult.beginDate + " " + chalResult.endDate}}</p>
 </div>

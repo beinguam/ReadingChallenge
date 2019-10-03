@@ -1,7 +1,4 @@
-<form>
-  <select formControlName="name">
-    <option>Choose a challenge</option>
-    <option *ngFor="let result of results">{{result.name}}</option>
-  </select>
-  <button>Submit</button>
-</form>
+<select id="challenges" formControlName="challenges">
+  <option>Choose a user</option>
+  <option *ngFor="let result of results" [value]="result.id">{{result.name}}</option>
+</select>

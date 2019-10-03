@@ -26,7 +26,8 @@ export class AdministrationComponent implements OnInit {
 
   choseOrganization(event: { target: { value: number; }; }) {        
     this.challenges.chooseChallenge(event.target.value).subscribe((data) => {
-      this.chalResults = data;      
+      this.chalResults = data;   
+      console.log(this.chalResults)   ;
     });
   }
 }
