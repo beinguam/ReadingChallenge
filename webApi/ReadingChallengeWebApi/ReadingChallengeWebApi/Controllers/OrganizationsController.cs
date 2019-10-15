@@ -39,6 +39,18 @@ namespace ReadingChallengeWebApi.Controllers
             return Ok(userOrgs);
         }
 
+        // GET: api/Challenges/5 --Get organization by challenge
+        [HttpGet("challenges/{id}")]
+        public ActionResult GetOrganization([FromRoute] int id)
+        {
+            var OrgsByChallenge = from o in _context.Organizations
+                                  join c in _context.Challenges on o.Id equals c.OrgId
+                                  where c.Id == id
+                                  select o;
+
+            return Ok(OrgsByChallenge);
+        }
+
         // GET: api/Organizations
         [HttpGet]
         public IEnumerable<Organizations> GetOrganizations()

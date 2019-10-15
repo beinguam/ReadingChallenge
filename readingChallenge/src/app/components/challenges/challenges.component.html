@@ -1,4 +1,8 @@
-<select id="challenges" formControlName="challenges">
+<select id="challenges" formControlName="challenges" (change)="choseChallenge($event)">
   <option>Choose a user</option>
   <option *ngFor="let result of results" [value]="result.id">{{result.name}}</option>
 </select>
+
+<div *ngIf="orgResults">
+  <p *ngFor="let orgResult of orgResults">{{orgResult.name}}</p>
+</div>

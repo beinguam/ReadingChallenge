@@ -27,7 +27,7 @@ namespace ReadingChallengeWebApi.Controllers
             return _context.ChallengeTypes;
         }
 
-        // GET: api/Challenges/User/5 --Get challenges by organization
+        // GET: api/organizations/5 --Get challenges by organization
         [HttpGet("organizations/{id}")]
         public ActionResult GetUser([FromRoute] int id)
         {

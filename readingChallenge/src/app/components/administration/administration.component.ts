@@ -25,12 +25,9 @@ export class AdministrationComponent implements OnInit {
     });
   }
 
-  choseOrganization(event: { target: { value: string; }; }) {
-    //sessionStorage.setItem("orgId", JSON.stringify(event.target.value));
+  choseOrganization(event: { target: { value: string; }; }) {    
     sessionStorage.setItem("orgId", event.target.value);
     
-    //this.orgId = parseInt(event.target.value);
-
     this.challenges.chooseChallenge(event.target.value).subscribe((data) => {
       this.chalResults = data;         
     });
