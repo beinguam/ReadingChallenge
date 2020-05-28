@@ -1,5 +1,5 @@
 export class Organizations {
-  Id: number;
-  Name: string;
-  Category: number;
+  id: number;
+  name: string;
+  category: number;
 }
